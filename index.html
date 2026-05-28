@@ -2,13 +2,11 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-    <title>ETPC | Escola Técnico Profissional de Cantanhede</title>
-    <meta name="description" content="A ETPC oferece cursos profissionais de alta qualidade, preparando os alunos para o mercado de trabalho e ensino superior. Com um Centro Tecnológico e projetos Erasmus+, garantimos uma formação inovadora e global.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de Desenvolvimento de Software | ETPC</title>
+    <meta name="description" content="Curso de Desenvolvimento de Software da ETPC. Aprende programação, bases de dados, desenvolvimento web e mobile. Inscreve-te já!">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -18,600 +16,560 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #ffffff;
+            background: #ffffff;
             color: #1e293b;
             line-height: 1.5;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         .container {
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Header & Navigation */
+        /* Header */
         .header {
-            background-color: #ffffff;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-            position: sticky;
+            position: fixed;
             top: 0;
-            z-index: 100;
-            backdrop-filter: blur(8px);
-            background: rgba(255,255,255,0.96);
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            z-index: 1000;
+            padding: 1rem 0;
         }
 
-        .nav-bar {
+        .nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1rem 0;
-            gap: 2rem;
         }
 
         .logo {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .logo-icon {
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
             font-size: 1.5rem;
-            color: white;
-        }
-
-        .logo-text h1 {
-            font-size: 1.35rem;
             font-weight: 800;
-            letter-spacing: -0.3px;
-            background: linear-gradient(120deg, #0f2b4f, #2563eb);
-            background-clip: text;
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
             -webkit-background-clip: text;
+            background-clip: text;
             color: transparent;
-        }
-
-        .logo-text span {
-            font-size: 0.75rem;
-            font-weight: 500;
-            color: #475569;
         }
 
         .nav-links {
             display: flex;
             gap: 2rem;
-            align-items: center;
+            list-style: none;
         }
 
         .nav-links a {
             text-decoration: none;
+            color: #334155;
             font-weight: 500;
-            color: #1e293b;
-            transition: color 0.2s ease;
-            font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
         .nav-links a:hover {
             color: #2563eb;
         }
 
-        .mobile-menu-btn {
+        .btn-inscrever {
+            background: #2563eb;
+            color: white !important;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+        }
+
+        .btn-inscrever:hover {
+            background: #1d4ed8;
+        }
+
+        .mobile-menu {
             display: none;
-            font-size: 1.6rem;
-            background: none;
-            border: none;
+            font-size: 1.8rem;
             cursor: pointer;
-            color: #1e293b;
         }
 
-        /* Buttons */
-        .btn-primary {
-            background-color: #2563eb;
-            color: white;
-            padding: 0.7rem 1.6rem;
-            border-radius: 40px;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.25s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 0.9rem;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-
-        .btn-primary:hover {
-            background-color: #1d4ed8;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(37,99,235,0.25);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 1.5px solid #cbd5e1;
-            color: #1e293b;
-            padding: 0.65rem 1.5rem;
-            border-radius: 40px;
-            font-weight: 500;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-outline:hover {
-            border-color: #2563eb;
-            color: #2563eb;
-        }
-
-        /* Hero section */
+        /* Hero */
         .hero {
-            padding: 5rem 0 5rem;
-            background: linear-gradient(110deg, #f8fafc 0%, #ffffff 100%);
-        }
-
-        .hero-grid {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 3rem;
+            padding: 120px 0 80px;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: white;
         }
 
         .hero-content {
-            flex: 1;
-            min-width: 280px;
+            max-width: 700px;
         }
 
         .hero-badge {
-            background: #e0f2fe;
-            color: #0369a1;
-            padding: 0.3rem 0.9rem;
-            border-radius: 40px;
+            background: #2563eb20;
+            color: #60a5fa;
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            border-radius: 50px;
             font-size: 0.8rem;
             font-weight: 600;
-            display: inline-block;
             margin-bottom: 1.5rem;
+            border: 1px solid #2563eb40;
         }
 
-        .hero-content h1 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: 3.5rem;
             font-weight: 800;
             line-height: 1.2;
-            letter-spacing: -0.02em;
-            color: #0f172a;
             margin-bottom: 1.5rem;
         }
 
         .hero-highlight {
-            background: linear-gradient(120deg, #2563eb, #38bdf8);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
+            color: #60a5fa;
         }
 
-        .hero-desc {
-            font-size: 1.1rem;
-            color: #334155;
-            max-width: 550px;
+        .hero p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
             margin-bottom: 2rem;
         }
 
-        .hero-stats {
+        .hero-buttons {
             display: flex;
-            gap: 2rem;
-            margin-top: 2rem;
+            gap: 1rem;
             flex-wrap: wrap;
         }
 
-        .stat {
-            text-align: left;
+        .btn-primary {
+            background: #2563eb;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-block;
         }
 
-        .stat-number {
-            font-weight: 800;
-            font-size: 2rem;
+        .btn-primary:hover {
+            background: #1d4ed8;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(37,99,235,0.3);
+        }
+
+        .btn-outline-light {
+            border: 2px solid #60a5fa;
+            color: #60a5fa;
+            padding: 0.8rem 2rem;
+            border-radius: 40px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-outline-light:hover {
+            background: #60a5fa;
             color: #0f172a;
         }
 
-        .stat-label {
-            font-size: 0.85rem;
-            color: #475569;
-        }
-
-        .hero-image {
-            flex: 1;
-            min-width: 280px;
-            background: url('https://placehold.co/600x500/e2e8f0/1e293b?text=ETPC+Campus') no-repeat center center/cover;
-            border-radius: 32px;
-            min-height: 320px;
-            background-color: #e2e8f0;
-            box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
-        }
-
-        /* Sections base */
+        /* Sections */
         .section {
-            padding: 5rem 0;
+            padding: 80px 0;
         }
 
-        .section-alt {
-            background-color: #f8fafc;
+        .section-gray {
+            background: #f8fafc;
         }
 
         .section-title {
-            font-size: 2rem;
+            text-align: center;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            text-align: center;
-            color: #0f172a;
         }
 
         .section-subtitle {
             text-align: center;
-            color: #475569;
-            max-width: 720px;
-            margin: 0 auto 3rem auto;
-            font-size: 1rem;
+            color: #64748b;
+            max-width: 700px;
+            margin: 0 auto 3rem;
         }
 
-        /* Cursos grid */
-        .cursos-grid {
+        /* O que vais aprender */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
 
-        .curso-card {
+        .skill-card {
             background: white;
-            border-radius: 24px;
-            padding: 1.6rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-            transition: all 0.25s ease;
-            border: 1px solid #eef2ff;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border: 1px solid #e2e8f0;
         }
 
-        .curso-card:hover {
+        .skill-card:hover {
             transform: translateY(-5px);
-            border-color: #cbd5e1;
-            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 30px rgba(0,0,0,0.1);
         }
 
-        .curso-icon {
-            font-size: 2.2rem;
+        .skill-icon {
+            font-size: 2.5rem;
             color: #2563eb;
             margin-bottom: 1rem;
         }
 
-        .curso-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 0.75rem;
+        .skill-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
         }
 
-        .curso-card p {
-            color: #475569;
-            font-size: 0.9rem;
-            line-height: 1.45;
-        }
-
-        .badge-curso {
-            display: inline-block;
-            background: #eef2ff;
-            color: #1e3a8a;
-            font-size: 0.7rem;
-            font-weight: 600;
-            padding: 0.2rem 0.8rem;
-            border-radius: 40px;
-            margin-top: 1rem;
-        }
-
-        /* cards duplos para CTE / Erasmus */
-        .feature-grid {
+        /* Módulos */
+        .modulos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            margin-top: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
         }
 
-        .feature-card {
+        .modulo-card {
             background: white;
-            border-radius: 28px;
-            padding: 2rem 1.8rem;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.02);
-            border: 1px solid #eef2ff;
-            transition: all 0.2s;
+            border-radius: 16px;
+            padding: 1.5rem;
+            border-left: 4px solid #2563eb;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
-        .feature-card i {
-            font-size: 2.2rem;
-            color: #2563eb;
-            margin-bottom: 1.2rem;
-        }
-
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-
-        /* Contato */
-        .contact-flex {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            justify-content: space-between;
-            background: white;
-            border-radius: 36px;
-            padding: 2.5rem;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.02);
-            border: 1px solid #eef2ff;
-        }
-
-        .contact-info {
-            flex: 1;
-        }
-
-        .contact-info p {
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-info i {
-            width: 28px;
+        .modulo-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
             color: #2563eb;
         }
 
-        .contact-map {
-            flex: 1;
-            background: #eef2ff;
-            border-radius: 24px;
-            min-height: 220px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #334155;
+        /* Saídas Profissionais */
+        .jobs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: center;
+        }
+
+        .job-card {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .job-card i {
+            font-size: 2rem;
+            color: #2563eb;
+            margin-bottom: 0.8rem;
+        }
+
+        /* Duração */
+        .info-box {
+            background: linear-gradient(135deg, #2563eb, #06b6d4);
+            color: white;
+            border-radius: 30px;
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .info-item {
+            text-align: center;
+        }
+
+        .info-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+        }
+
+        /* Contacto */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 30px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            font-family: inherit;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: #2563eb;
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-submit:hover {
+            background: #1d4ed8;
         }
 
         /* Footer */
         .footer {
             background: #0f172a;
-            color: #cbd5e1;
-            padding: 2.5rem 0;
+            color: #94a3b8;
             text-align: center;
-            font-size: 0.85rem;
+            padding: 2rem 0;
         }
 
         /* Responsive */
-        @media (max-width: 800px) {
+        @media (max-width: 768px) {
             .nav-links {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                flex-direction: column;
-                background: white;
-                width: 80%;
-                height: calc(100vh - 70px);
-                padding: 2rem;
-                box-shadow: 5px 0 20px rgba(0,0,0,0.05);
-                transition: left 0.3s ease;
-                gap: 1.8rem;
-                z-index: 99;
+                display: none;
             }
-            .nav-links.active {
-                left: 0;
-            }
-            .mobile-menu-btn {
+            .mobile-menu {
                 display: block;
             }
-            .hero-content h1 {
-                font-size: 2.2rem;
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
             }
             .section-title {
-                font-size: 1.75rem;
-            }
-        }
-
-        @media (max-width: 550px) {
-            .container {
-                padding: 0 20px;
-            }
-            .hero-stats {
-                gap: 1.2rem;
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <div class="nav-bar">
-                <div class="logo">
-                    <div class="logo-icon">E</div>
-                    <div class="logo-text">
-                        <h1>ETPC</h1>
-                        <span>Escola Técnico Profissional de Cantanhede</span>
-                    </div>
-                </div>
-                <div class="nav-links" id="navLinks">
-                    <a href="#sobre">Sobre</a>
-                    <a href="#cursos">Cursos</a>
-                    <a href="#tecnologico">Centro Tecnológico</a>
-                    <a href="#erasmus">Erasmus+</a>
-                    <a href="#contactos">Contactos</a>
-                </div>
-                <button class="mobile-menu-btn" id="menuBtn" aria-label="Menu">
-                    <i class="fas fa-bars"></i>
-                </button>
+
+<header class="header">
+    <div class="container">
+        <div class="nav">
+            <div class="logo">💻 DevSoftware | ETPC</div>
+            <ul class="nav-links">
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#modulos">Módulos</a></li>
+                <li><a href="#saidas">Saídas</a></li>
+                <li><a href="#contacto" class="btn-inscrever">Pré-inscrição</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
             </div>
         </div>
-    </header>
+    </div>
+</header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="container">
-                <div class="hero-grid">
-                    <div class="hero-content">
-                        <div class="hero-badge"><i class="fas fa-graduation-cap"></i> Ensino técnico de excelência</div>
-                        <h1>Formação para o <span class="hero-highlight">futuro</span><br> com inovação e carreira</h1>
-                        <p class="hero-desc">Na ETPC preparamos jovens para os desafios do mercado de trabalho e para o ensino superior, através de cursos profissionais modernos, Centro Tecnológico de Informática e projetos Erasmus+.</p>
-                        <a href="#cursos" class="btn-primary"><i class="fas fa-arrow-right"></i> Explorar cursos</a>
-                        <div class="hero-stats">
-                            <div class="stat"><div class="stat-number">2000+</div><div class="stat-label">Alunos diplomados</div></div>
-                            <div class="stat"><div class="stat-number">30+</div><div class="stat-label">Anos de existência</div></div>
-                            <div class="stat"><div class="stat-number">100+</div><div class="stat-label">Empresas parceiras</div></div>
-                        </div>
-                    </div>
-                    <div class="hero-image" style="background-image: url('https://placehold.co/600x500/eef2ff/1e293b?text=Campus+ETPC'); background-size: cover; background-position: center;"></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sobre -->
-        <section id="sobre" class="section">
-            <div class="container">
-                <h2 class="section-title">Sobre a ETPC</h2>
-                <div class="section-subtitle">Uma instituição que combina tradição e inovação para formar cidadãos globais.</div>
-                <div style="max-width: 900px; margin: 0 auto; text-align: center; background: #f1f5f9; padding: 2rem; border-radius: 32px;">
-                    <p style="font-size: 1.05rem; color: #1e293b;">A Escola Técnico Profissional de Cantanhede (ETPC) é uma referência na formação profissional, oferecendo cursos práticos e dupla certificação (secundário + profissional). Com forte aposta na internacionalização via Erasmus+ e na criação do Centro Tecnológico Especializado na área da informática (CTE), a ETPC prepara os seus alunos com competências avançadas e atualizadas, respondendo às necessidades do mercado de trabalho atual e digital.&nbsp;<i class="fas fa-check-circle" style="color:#2563eb;"></i></p>
-                </div>
-                <div class="feature-grid" style="margin-top: 3rem;">
-                    <div class="feature-card"><i class="fas fa-chalkboard-user"></i><h3>Aprendizagem prática</h3><p>Componentes teóricas e práticas em laboratórios, estágios em empresas e projetos reais.</p></div>
-                    <div class="feature-card"><i class="fas fa-globe"></i><h3>Visão internacional</h3><p>Projetos Erasmus+ com mobilidade para alunos e docentes, incentivando a cidadania europeia.</p></div>
-                    <div class="feature-card"><i class="fas fa-microchip"></i><h3>Centro Tecnológico (CTE)</h3><p>Investimento em tecnologia de ponta na área da informática, apoiado pelo PRR e União Europeia.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Cursos Profissionais e CEF -->
-        <section id="cursos" class="section section-alt">
-            <div class="container">
-                <h2 class="section-title">Oferta formativa</h2>
-                <div class="section-subtitle">Cursos profissionais e CEF com dupla certificação — prepare-se para a vida ativa ou prosseguimento de estudos.</div>
-
-                <div style="margin-bottom: 2rem;"><h3 style="font-weight: 700; font-size: 1.5rem;"><i class="fas fa-laptop-code"></i> Cursos Profissionais</h3></div>
-                <div class="cursos-grid" id="cursosProfissionaisGrid"></div>
-
-                <div style="margin-top: 3rem; margin-bottom: 1rem;"><h3 style="font-weight: 700; font-size: 1.5rem;"><i class="fas fa-utensils"></i> Cursos CEF (Educação e Formação)</h3></div>
-                <div class="cursos-grid" id="cursosCEFGrid"></div>
-                <div class="section-subtitle" style="margin-top: 2rem;">Contacte-nos para mais informações sobre vagas, planos curriculares e acesso.</div>
-            </div>
-        </section>
-
-        <!-- Centro Tecnológico + Erasmus -->
-        <section id="tecnologico" class="section">
-            <div class="container">
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <i class="fas fa-microchip"></i>
-                        <h3>Centro Tecnológico Especializado (CTE) – Informática</h3>
-                        <p>A ETPC viu aprovada a candidatura a um Centro Tecnológico na área da informática, com grande investimento no âmbito do PRR. Este centro proporciona ambiente equipado com tecnologia de ponta, capacitando alunos com competências técnicas avançadas, inovação e colaboração com empresas tecnológicas, preparando-os para o futuro digital.</p>
-                    </div>
-                    <div class="feature-card">
-                        <i class="fas fa-handshake"></i>
-                        <h3>Erasmus+ : uma janela para a Europa</h3>
-                        <p>Através do programa Erasmus+, a ETPC promove mobilidades internacionais (outgoing e incoming), fortalecendo competências linguísticas e intercâmbios culturais. Os alunos ganham visibilidade global e oportunidades profissionais alargadas, com parcerias em vários países europeus.</p>
-                        <a href="https://etpc.pt/erasmus" target="_blank" style="margin-top: 1rem; display: inline-block;" class="btn-outline">Saber mais <i class="fas fa-external-link-alt"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contactos -->
-        <section id="contactos" class="section section-alt">
-            <div class="container">
-                <h2 class="section-title">Fale connosco</h2>
-                <div class="section-subtitle">Estamos localizados em Cantanhede. A sua carreira começa aqui.</div>
-                <div class="contact-flex">
-                    <div class="contact-info">
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Morada:</strong> Rua Padre Américo, 26, 3060-186 Cantanhede, Portugal</p>
-                        <p><i class="fas fa-envelope"></i> <strong>Email:</strong> geral@etpc.pt</p>
-                        <p><i class="fas fa-phone-alt"></i> <strong>Telefone:</strong> (+351) 231 123 456 (indicativo)</p>
-                        <p><i class="fas fa-globe"></i> <strong>Site oficial:</strong> <a href="https://etpc.pt" target="_blank" style="color:#2563eb;">etpc.pt</a></p>
-                        <div style="margin-top: 1.5rem;"><a href="https://etpc.pt/historia" target="_blank" class="btn-outline"><i class="fas fa-landmark"></i> Conhece a nossa história</a></div>
-                    </div>
-                    <div class="contact-map">
-                        <div style="text-align: center;"><i class="fas fa-school" style="font-size: 2rem;"></i><br>📍 Cantanhede · Portugal<br><span style="font-size: 0.8rem;">Lat: 40.3422 N, 8.5914 W</span></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
+<main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
         <div class="container">
-            <p>© 2025 ETPC — Escola Técnico Profissional de Cantanhede. Formação para o futuro.</p>
-            <p style="margin-top: 0.5rem; font-size: 0.75rem;"><a href="https://etpc.pt/politica-de-privacidade" target="_blank" style="color:#94a3b8;">Política de Privacidade</a></p>
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-code"></i> Curso Profissional</div>
+                <h1>Técnico de <span class="hero-highlight">Desenvolvimento de Software</span></h1>
+                <p>Aprende a programar, criar aplicações web e mobile, gerir bases de dados e tornar-te um profissional de TI com alta empregabilidade.</p>
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn-primary">Inscreve-te Já</a>
+                    <a href="#sobre" class="btn-outline-light">Saber Mais</a>
+                </div>
+            </div>
         </div>
-    </footer>
+    </section>
 
-    <script>
-        // Dados actualizados baseados na oferta visível no site da ETPC
-        const cursosProfissionais = [
-            { nome: "Técnico/a de Gestão e Programação de Sistemas Informáticos", descricao: "Configuração e otimização de equipamentos, redes e segurança informática.", icone: "fa-code" },
-            { nome: "Técnico/a de Desenvolvimento de Software", descricao: "Programação, desenvolvimento de aplicações e dupla certificação.", icone: "fa-laptop-code" },
-            { nome: "Técnico de Contabilidade", descricao: "Gestão financeira, fiscalidade e contabilidade para empresas.", icone: "fa-chart-line" },
-            { nome: "Técnico/a de Informática - Instalação e Gestão de Redes", descricao: "Conceção, implementação e administração de redes e sistemas informáticos.", icone: "fa-network-wired" }
-        ];
+    <!-- Duração do Curso -->
+    <section class="section">
+        <div class="container">
+            <div class="info-box">
+                <h2>📅 Duração do Curso</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-number">3 Anos</div>
+                        <div>Formação Completa</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-number">3600h</div>
+                        <div>Carga Horária Total</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-number">800h</div>
+                        <div>Estágio Profissional</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        const cursosCEF = [
-            { nome: "CEF Tipo 3 - Cozinheiro", descricao: "Técnicas de cozinha, higiene e segurança alimentar, preparação para restauração e hotelaria.", icone: "fa-utensils" },
-            { nome: "CEF Tipo 3 - Operador de Informática", descricao: "Manutenção de computadores, redes, software e apoio a utilizadores.", icone: "fa-desktop" },
-            { nome: "Técnico/a de Restaurante/Bar", descricao: "Serviço de restaurante/bar, gestão de clientes e boas práticas.", icone: "fa-mug-hot" }
-        ];
+    <!-- O que vais aprender -->
+    <section id="sobre" class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">O que vais aprender</h2>
+            <p class="section-subtitle">Adquire competências técnicas procuradas pelo mercado</p>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-js"></i></div>
+                    <h3>Programação</h3>
+                    <p>JavaScript, Python, Java, PHP e muito mais</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>Bases de Dados</h3>
+                    <p>MySQL, SQL Server, MongoDB</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fab fa-react"></i></div>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>HTML, CSS, React, Node.js</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Apps Mobile</h3>
+                    <p>Desenvolvimento para Android e iOS</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        function renderCursos(containerId, cursosArray) {
-            const container = document.getElementById(containerId);
-            if (!container) return;
-            container.innerHTML = '';
-            cursosArray.forEach(curso => {
-                const card = document.createElement('div');
-                card.className = 'curso-card';
-                card.innerHTML = `
-                    <div class="curso-icon"><i class="fas ${curso.icone}"></i></div>
-                    <h3>${curso.nome}</h3>
-                    <p>${curso.descricao}</p>
-                    <div class="badge-curso">Dupla certificação</div>
-                `;
-                container.appendChild(card);
-            });
-        }
+    <!-- Plano Curricular -->
+    <section id="modulos" class="section">
+        <div class="container">
+            <h2 class="section-title">Plano Curricular</h2>
+            <p class="section-subtitle">Módulos profissionais do curso</p>
+            <div class="modulos-grid">
+                <div class="modulo-card"><h3>🔹 Programação e Algoritmos</h3><p>Lógica de programação, estruturas de dados e algoritmos fundamentais.</p></div>
+                <div class="modulo-card"><h3>🔹 Linguagens de Programação</h3><p>Java, Python, JavaScript, C# e boas práticas de desenvolvimento.</p></div>
+                <div class="modulo-card"><h3>🔹 Bases de Dados</h3><p>Modelação, SQL, administração e integração com aplicações.</p></div>
+                <div class="modulo-card"><h3>🔹 Desenvolvimento Web</h3><p>HTML5, CSS3, JavaScript, frameworks front-end e back-end.</p></div>
+                <div class="modulo-card"><h3>🔹 Programação Mobile</h3><p>Desenvolvimento de apps para Android com Kotlin/Java.</p></div>
+                <div class="modulo-card"><h3>🔹 Engenharia de Software</h3><p>Metodologias ágeis, UML, testes e gestão de projetos.</p></div>
+                <div class="modulo-card"><h3>🔹 Sistemas Operativos</h3><p>Windows, Linux, comandos e administração de sistemas.</p></div>
+                <div class="modulo-card"><h3>🔹 Redes de Computadores</h3><p>Conceitos de redes, protocolos, segurança e configuração.</p></div>
+            </div>
+        </div>
+    </section>
 
-        renderCursos('cursosProfissionaisGrid', cursosProfissionais);
-        renderCursos('cursosCEFGrid', cursosCEF);
+    <!-- Saídas Profissionais -->
+    <section id="saidas" class="section section-gray">
+        <div class="container">
+            <h2 class="section-title">Saídas Profissionais</h2>
+            <p class="section-subtitle">Onde podes trabalhar depois do curso</p>
+            <div class="jobs-grid">
+                <div class="job-card"><i class="fas fa-laptop-code"></i><h3>Programador</h3><p>Web, Desktop ou Mobile</p></div>
+                <div class="job-card"><i class="fas fa-database"></i><h3>Administrador BD</h3><p>Gestão de bases de dados</p></div>
+                <div class="job-card"><i class="fas fa-shield-alt"></i><h3>Segurança Informática</h3><p>Cibersegurança</p></div>
+                <div class="job-card"><i class="fas fa-users"></i><h3>Analista Funcional</h3><p>Levantamento de requisitos</p></div>
+                <div class="job-card"><i class="fas fa-rocket"></i><h3>Projetos Digitais</h3><p>Gestão e implementação</p></div>
+                <div class="job-card"><i class="fas fa-graduation-cap"></i><h3>Ensino Superior</h3><p>Engenharia Informática</p></div>
+            </div>
+        </div>
+    </section>
 
-        // Mobile menu toggle
-        const menuBtn = document.getElementById('menuBtn');
-        const navLinks = document.getElementById('navLinks');
-        if (menuBtn && navLinks) {
-            menuBtn.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-                const icon = menuBtn.querySelector('i');
-                if (navLinks.classList.contains('active')) {
-                    icon.classList.remove('fa-bars');
-                    icon.classList.add('fa-times');
-                } else {
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                }
-            });
-            // Fechar menu ao clicar num link
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.addEventListener('click', () => {
-                    navLinks.classList.remove('active');
-                    const icon = menuBtn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
-                });
-            });
-        }
-    </script>
+    <!-- Contacto / Pré-inscrição -->
+    <section id="contacto" class="section">
+        <div class="container">
+            <h2 class="section-title">Pré-inscrição</h2>
+            <p class="section-subtitle">Garante a tua vaga no Curso de Desenvolvimento de Software</p>
+            <div class="contact-form">
+                <form id="inscricaoForm">
+                    <div class="form-group">
+                        <input type="text" placeholder="Nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="Telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="4" placeholder="Mensagem (opcional)"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar Pré-inscrição</button>
+                </form>
+                <p style="text-align: center; margin-top: 1rem; font-size: 0.8rem; color: #64748b;">
+                    <i class="fas fa-envelope"></i> geral@etpc.pt | <i class="fas fa-phone"></i> 231 123 456
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="container">
+        <p>© 2025 ETPC - Curso de Desenvolvimento de Software | Cantanhede, Portugal</p>
+        <p style="margin-top: 0.5rem; font-size: 0.8rem;">Dupla certificação: 12º ano + Qualificação Profissional Nível 4</p>
+    </div>
+</footer>
+
+<script>
+    // Menu Mobile
+    const mobileBtn = document.querySelector('.mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileBtn) {
+        mobileBtn.addEventListener('click', () => {
+            if (navLinks.style.display === 'flex') {
+                navLinks.style.display = 'none';
+            } else {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.left = '0';
+                navLinks.style.width = '100%';
+                navLinks.style.backgroundColor = 'white';
+                navLinks.style.padding = '2rem';
+                navLinks.style.gap = '1rem';
+                navLinks.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+                navLinks.style.zIndex = '999';
+            }
+        });
+    }
+
+    // Fechar menu ao clicar num link
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768 && navLinks) {
+                navLinks.style.display = 'none';
+            }
+        });
+    });
+
+    // Form submit alert
+    const form = document.getElementById('inscricaoForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Pré-inscrição enviada com sucesso! Entraremos em contacto brevemente.');
+            form.reset();
+        });
+    }
+</script>
 </body>
 </html>
